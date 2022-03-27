@@ -11,14 +11,14 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "fake pictures"
   spec.description   = "simple way for fake pictures some categories"
-  spec.homepage      = "https://later.io"
+  spec.homepage      = "https://github.com/loqimean/fake_picture"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["allowed_push_host"] = 'https://rubygems.org/'
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://later.io"
+  spec.metadata["source_code_uri"] = "https://github.com/loqimean/fake_picture"
 
   spec.files         = Dir['lib/**/*'] + %w[License.txt README.md]
   spec.bindir        = 'bin'
