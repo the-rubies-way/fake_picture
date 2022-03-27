@@ -21,25 +21,25 @@ module FakePicture
         define_singleton_method :"#{name}" do
           self.superclass.check_pack_directory_readiness(path_to_directory + PACK_PATH)
 
-          self.superclass.random_file("#{path_to_directory + PACK_PATH}/#{name}-*.webp")
+          self.superclass.random_file("#{path_to_directory + PACK_PATH}/#{name}-*.jpg")
         end
 
         define_singleton_method :"#{name}_file" do
           self.superclass.check_pack_directory_readiness(path_to_directory + PACK_PATH)
 
-          self.superclass.random_file("#{path_to_directory + PACK_PATH}/#{name}-*.webp", file: true)
+          self.superclass.random_file("#{path_to_directory + PACK_PATH}/#{name}-*.jpg", file: true)
         end
 
         define_singleton_method :random do
           self.superclass.check_pack_directory_readiness(path_to_directory + PACK_PATH)
 
-          self.superclass.random_file("#{path_to_directory + self::PACK_PATH}/*.webp")
+          self.superclass.random_file("#{path_to_directory + self::PACK_PATH}/*.jpg")
         end
 
         define_singleton_method :random_file do
           self.superclass.check_pack_directory_readiness(path_to_directory + PACK_PATH)
 
-          self.superclass.random_file("#{path_to_directory + self::PACK_PATH}/*.webp", file: true)
+          self.superclass.random_file("#{path_to_directory + self::PACK_PATH}/*.jpg", file: true)
         end
       end
     end
