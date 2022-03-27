@@ -1,8 +1,17 @@
 # frozen_string_literal: true
 
-require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+$LOAD_PATH.unshift File.dirname(__FILE__)
 
-RSpec::Core::RakeTask.new(:spec)
+require 'bundler'
+Bundler::GemHelper.install_tasks
 
-task default: :spec
+desc 'Start a console session with FakePicture loaded'
+task :console do
+  require 'irb'
+  require 'irb/completion'
+  require 'debug'
+  require 'fake_picture' # You know what to do.
+
+  ARGV.clear
+  IRB.start
+end
