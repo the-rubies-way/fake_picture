@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fake_picture (0.1.0)
+    fake_picture (0.1.1)
 
 GEM
   remote: https://rubygems.org/
