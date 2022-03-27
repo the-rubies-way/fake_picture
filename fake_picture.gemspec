@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.files         = Dir['lib/**/*'] + %w[License.txt README.md]
   spec.bindir        = 'bin'
-  spec.executables   = ['faker_picture']
+  spec.executables   = ['fake_picture']
   spec.require_paths = ['lib']
 
   spec.add_development_dependency('debug', '1.4')
