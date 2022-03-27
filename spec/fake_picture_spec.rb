@@ -1,11 +1,62 @@
 # frozen_string_literal: true
 
 RSpec.describe FakePicture do
-  it "has a version number" do
-    expect(FakePicture::VERSION).not_to be nil
+  it 'has a version number' do
+    expect(FakePicture::VERSION).not_to be(nil)
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe described_class::Base do
+    context 'methods' do
+      context 'self.random_file' do
+        it 'returns the path to random file, if path correct' do
+          path_to_file = described_class.random_file("#{__dir__}/files/*")
+
+          expect(path_to_file).not_to be_falsey
+          expect(path_to_file).to match(/\w+/)
+          expect(File.file?(path_to_file)).to be_truthy
+          expect(File.exist?(path_to_file)).to be_truthy
+          expect(File.readable?(path_to_file)).to be_truthy
+        end
+
+        it 'returns random file, if the path correct' do
+          file = described_class.random_file("#{__dir__}/files/*", file: true)
+
+          expect(file).not_to be_falsey
+          expect(file).to be_an_instance_of(File)
+          expect(File.file?(file)).to be_truthy
+          expect(File.exist?(file)).to be_truthy
+          expect(File.readable?(file)).to be_truthy
+        end
+
+        it 'returns random file by extension, if the path correct' do
+          path_to_file = described_class.random_file("#{__dir__}/files/*.doc")
+
+          expect(path_to_file).not_to be_falsey
+          expect(path_to_file).to include('.doc')
+          expect(File.file?(path_to_file)).to be_truthy
+          expect(File.exist?(path_to_file)).to be_truthy
+          expect(File.readable?(path_to_file)).to be_truthy
+        end
+      end
+
+      context 'self.define_methods' do
+        context 'invalid parameters' do
+          class TestClass < described_class
+            define_methods(__dir__, :test, :test_2)
+          end
+
+          it 'creates the methods' do
+            expect(TestClass).to respond_to(:test)
+            expect(TestClass).to respond_to(:test_2)
+          end
+
+          it 'returns error if pack folder not exists or empty' do
+            expect do
+              TestClass.test
+            end.to raise_error(RuntimeError, 'Pack folder doesn\'t exist or empty')
+          end
+        end
+      end
+    end
   end
 end
