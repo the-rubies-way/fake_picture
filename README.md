@@ -1,4 +1,4 @@
-
+[![Actions Status](https://github.com/loqimean/fake_picture/actions/workflows/main.yml/badge.svg)](https://github.com/loqimean/fake_picture/actions)
 # FakePicture
 
 Welcome to my new gem! This is a gem for simple seeding, testing and etc by uploading fake pictures. Now you don't need create too many flders with pictures, because you can use this gem which can give you path to random picture of selectedd category or file, if you need it.
