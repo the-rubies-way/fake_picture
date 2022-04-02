@@ -18,16 +18,6 @@ RSpec.describe FakePicture do
           expect(File.readable?(path_to_file)).to be_truthy
         end
 
-        it 'returns random file, if the path correct' do
-          file = described_class.random_file("#{__dir__}/files/*", file: true)
-
-          expect(file).not_to be_falsey
-          expect(file).to be_an_instance_of(File)
-          expect(File.file?(file)).to be_truthy
-          expect(File.exist?(file)).to be_truthy
-          expect(File.readable?(file)).to be_truthy
-        end
-
         it 'returns random file by extension, if the path correct' do
           path_to_file = described_class.random_file("#{__dir__}/files/*.doc")
 
@@ -39,21 +29,24 @@ RSpec.describe FakePicture do
         end
       end
 
-      context 'self.define_methods' do
+      context 'self.initialize_fake_picture_methods' do
         context 'invalid parameters' do
-          class TestClass < described_class
-            define_methods(__dir__, :test, :test_2)
+          it 'returns error if pack folder not exists or empty' do
+            expect do
+              class TestClass < described_class
+                initialize_fake_picture_methods(:test)
+              end
+            end.to raise_error(RuntimeError, 'Pack folder doesn\'t exist or empty')
           end
 
           it 'creates the methods' do
+            expect(described_class).to receive(:check_pack_directory_readiness)
+            class TestClass < described_class
+              initialize_fake_picture_methods(:test, :test_2)
+            end
+
             expect(TestClass).to respond_to(:test)
             expect(TestClass).to respond_to(:test_2)
-          end
-
-          it 'returns error if pack folder not exists or empty' do
-            expect do
-              TestClass.test
-            end.to raise_error(RuntimeError, 'Pack folder doesn\'t exist or empty')
           end
         end
       end

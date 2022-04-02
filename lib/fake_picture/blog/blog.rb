@@ -1,5 +1,5 @@
 module FakePicture
   class Blog < Base
-    define_methods(__dir__, :day_street, :night_street)
+    initialize_fake_picture_methods(:day_street, :night_street)
   end
 end
