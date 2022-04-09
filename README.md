@@ -1,4 +1,5 @@
 [![Actions Status](https://github.com/loqimean/fake_picture/actions/workflows/CI.yml/badge.svg)](https://github.com/loqimean/fake_picture/actions)
+
 # FakePicture
 
 Welcome to my new gem! This is a gem for simple seeding, testing and etc by uploading fake pictures. Now you don't need create too many flders with pictures, because you can use this gem which can give you path to random picture of selectedd category or file, if you need it.
@@ -28,11 +29,13 @@ FakePicture::Avatar.man     #=>  /Users/username/workdirectory/fake_picture/lib/
 
 FakePicture::Avatar.woman   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/woman-4.jpg
 ```
+
 You can also call method `person` if you want to get random `avatar`:
 
 ```ruby
 FakePicture::Avatar.person     #=> "/Users/xi-master/Workplace/fake_picture/lib/fake_picture/avatar/pack/woman-5.svg"
 ```
+
 ###### FakePicture::Blog:
 
 ```ruby
@@ -48,9 +51,40 @@ FakePicture::People.woman   #=>  /Users/username/workdirectory/fake_picture/lib/
 ```
 
 #### As file:
+
 You can call a method ending in "_file" if you want to get an instance of the File class
+
 ```ruby
 FakePicture::People.man_file   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/woman-4.jpg
+```
+
+#### In factories:
+
+```ruby
+FactoryBot.define do
+  factory :gallery do
+    file { FakePicture::Blog.preview_file }
+  end
+end
+```
+
+#### In specs:
+
+```ruby
+it 'some create user test' do
+    post :create, params: {
+        user: {
+            name: 'John',
+            avatar: FakePicture::Avatar.man_file
+        }
+    }
+end
+```
+
+#### In seeds:
+
+```ruby
+User.create(name: 'John', avatar: FakePicture::Avatar.man_file)
 ```
 
 ## Development
