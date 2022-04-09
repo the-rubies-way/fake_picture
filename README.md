@@ -32,9 +32,7 @@ FakePicture::Avatar.woman   #=>  /Users/username/workdirectory/fake_picture/lib/
 ###### FakePicture::Blog:
 
 ```ruby
-FakePicture::Blog.day_street    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/day_street-4.jpg
-
-FakePicture::Blog.night_street   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/night_street-4.jpg
+FakePicture::Blog.preview    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/preview-4.jpg
 ```
 
 ###### FakePicture::People:
