@@ -26,11 +26,7 @@ Or install it yourself as:
 ```ruby
 FakePicture::Avatar.man    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/man-4.jpg
 
-FakePicture::Avatar.man_file    #=>  #<File:/Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/man-2.jpg>
-
 FakePicture::Avatar.woman   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/woman-4.jpg
-
-FakePicture::Avatar.woman_file  #=>  #<File:/Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/woman-2.jpg>
 ```
 
 ###### FakePicture::Blog:
@@ -38,11 +34,7 @@ FakePicture::Avatar.woman_file  #=>  #<File:/Users/username/workdirectory/fake_p
 ```ruby
 FakePicture::Blog.day_street    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/day_street-4.jpg
 
-FakePicture::Blog.day_street_file    #=>  #<File:/Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/day_street-2.jpg>
-
 FakePicture::Blog.night_street   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/night_street-4.jpg
-
-FakePicture::Blog.night_street_file  #=>  #<File:/Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/night_street-2.jpg>
 ```
 
 ###### FakePicture::People:
@@ -50,11 +42,13 @@ FakePicture::Blog.night_street_file  #=>  #<File:/Users/username/workdirectory/f
 ```ruby
 FakePicture::People.man    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/man-4.jpg
 
-FakePicture::People.man_file    #=>  #<File:/Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/man-2.jpg>
-
 FakePicture::People.woman   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/woman-4.jpg
+```
 
-FakePicture::People.woman_file  #=>  #<File:/Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/woman-2.jpg>
+#### As file:
+You can call a method ending in "_file" if you want to get an instance of the File class
+```ruby
+FakePicture::People.man_file   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/woman-4.jpg
 ```
 
 ## Development
