@@ -24,15 +24,19 @@ Or install it yourself as:
 ###### FakePicture::Avatar:
 
 ```ruby
-FakePicture::Avatar.man    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/man-4.jpg
+FakePicture::Avatar.man     #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/man-4.jpg
 
 FakePicture::Avatar.woman   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/woman-4.jpg
 ```
+You can also call method `person` if you want to get random `avatar`:
 
+```ruby
+FakePicture::Avatar.person     #=> "/Users/xi-master/Workplace/fake_picture/lib/fake_picture/avatar/pack/woman-5.svg"
+```
 ###### FakePicture::Blog:
 
 ```ruby
-FakePicture::Blog.day_street    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/day_street-4.jpg
+FakePicture::Blog.day_street     #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/day_street-4.jpg
 
 FakePicture::Blog.night_street   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/blog/pack/night_street-4.jpg
 ```
@@ -40,7 +44,7 @@ FakePicture::Blog.night_street   #=>  /Users/username/workdirectory/fake_picture
 ###### FakePicture::People:
 
 ```ruby
-FakePicture::People.man    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/man-4.jpg
+FakePicture::People.man     #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/man-4.jpg
 
 FakePicture::People.woman   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/woman-4.jpg
 ```

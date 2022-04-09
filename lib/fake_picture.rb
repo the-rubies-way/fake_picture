@@ -14,13 +14,14 @@ module FakePicture
       #TODO: make downloading pictures to gem
     # end
 
-    def self.initialize_fake_picture_methods(*method_names)
+    def self.initialize_fake_picture_methods(*method_names, new_random_method_name: nil)
       path_to_pack = "#{__dir__}/fake_picture/#{self.name.split('::').last.downcase}/pack"
 
       self.superclass.check_pack_directory_readiness(path_to_pack)
 
       [*method_names, :random].each do |name|
         selector = name == :random ? '/*' : "/#{name}-*"
+        name = new_random_method_name if name == :random && !new_random_method_name.nil?
 
         define_singleton_method :"#{name}" do
           self.superclass.random_file("#{path_to_pack +  selector}")
