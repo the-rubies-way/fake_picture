@@ -27,9 +27,10 @@ module FakePicture
           self.superclass.random_file("#{path_to_pack +  selector}")
         end
 
-        define_singleton_method :"#{name}_file" do
-          File.new(self.send(name))
-        end
+      end
+
+      define_singleton_method :file do |method_name|
+        File.new(self.send(method_name))
       end
     end
 

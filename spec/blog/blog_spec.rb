@@ -14,11 +14,11 @@ RSpec.describe FakePicture::Blog do
       end
     end
 
-    context ':preview_file' do
-      let(:file) { described_class.preview_file }
+    context 'self.file(:preview)' do
+      let(:file) { described_class.file(:preview) }
 
       it 'has this method' do
-        expect(described_class).to respond_to(:preview_file)
+        expect(described_class).to respond_to(:file)
       end
 
       it 'returns file' do

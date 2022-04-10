@@ -14,11 +14,11 @@ RSpec.describe FakePicture::People do
       end
     end
 
-    context ':man_file' do
-      let(:file) { described_class.man_file }
+    context 'self.file(:man)' do
+      let(:file) { described_class.file(:man) }
 
       it 'has this method' do
-        expect(described_class).to respond_to(:man_file)
+        expect(described_class).to respond_to(:file)
       end
 
       it 'returns file' do
