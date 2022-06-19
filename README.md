@@ -50,6 +50,12 @@ FakePicture::People.man     #=>  /Users/username/workdirectory/fake_picture/lib/
 FakePicture::People.woman   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/people/pack/woman-4.jpg
 ```
 
+###### FakePicture::company:
+
+```ruby
+FakePicture::Company.logo    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/company/pack/logo-11.svg
+```
+
 #### As file:
 
 You can also call a method `file` with method name of this class if you wanna get picture as file for some actions, like this:
