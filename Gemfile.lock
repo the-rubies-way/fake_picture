@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fake_picture (0.2.5)
+    fake_picture (0.2.6)
 
 GEM
   remote: https://rubygems.org/
@@ -38,6 +38,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  arm64-darwin-21
 
 DEPENDENCIES
   debug (= 1.4)

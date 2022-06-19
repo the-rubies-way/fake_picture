@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'base64'
 
 module FakePicture
   class Base
@@ -11,10 +12,10 @@ module FakePicture
     end
 
     # def download(query)
-      #TODO: make downloading pictures to gem
+      #TODO: make downloading pictures to gem by a service: https://source.unsplash.com/random/<width>x<height>
     # end
 
-    def self.initialize_fake_picture_methods(*method_names, new_random_method_name: nil)
+    def self.initialize_fake_picture_methods(*method_names, new_random_method_name: nil) # from line 17 to 24 make code better
       path_to_pack = "#{__dir__}/fake_picture/#{self.name.split('::').last.downcase}/pack"
 
       self.superclass.check_pack_directory_readiness(path_to_pack)
@@ -26,11 +27,14 @@ module FakePicture
         define_singleton_method :"#{name}" do
           self.superclass.random_file("#{path_to_pack +  selector}")
         end
-
       end
 
       define_singleton_method :file do |method_name|
         File.new(self.send(method_name))
+      end
+
+      define_singleton_method :base64 do |method_name|
+        Base64.encode64(File.read(self.send(method_name)))
       end
     end
 

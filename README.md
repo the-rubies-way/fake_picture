@@ -58,6 +58,14 @@ You can also call a method `file` with method name of this class if you wanna ge
 FakePicture::People.file(:man)   #=> #<File:/Users/xi-master/Workplace/fake_picture/lib/fake_picture/avatar/pack/man-6.svg>
 ```
 
+#### As Base64:
+
+You can also call a method `base64` with a method name of this class if you want to get the picture as a base64 encoded file for might be sending it somewhere, like this:
+
+```ruby
+FakePicture::People.base64(:man)   #=> ""/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAwICQoJBwwKCgoNDQwOEh4TEhAQ\nEiQaGxUeKyYtLComKSkvNUQ6L.."
+```
+
 #### In factories:
 
 ```ruby
