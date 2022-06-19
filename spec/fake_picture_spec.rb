@@ -29,12 +29,12 @@ RSpec.describe FakePicture do
         end
       end
 
-      context 'self.initialize_fake_picture_methods' do
+      context 'self.initialize_methods' do
         context 'invalid parameters' do
           it 'returns error if pack folder not exists or empty' do
             expect do
               class TestClass < described_class
-                initialize_fake_picture_methods(:test)
+                initialize_methods(:test)
               end
             end.to raise_error(RuntimeError, 'Pack folder doesn\'t exist or empty')
           end
@@ -42,7 +42,7 @@ RSpec.describe FakePicture do
           it 'creates the methods' do
             expect(described_class).to receive(:check_pack_directory_readiness)
             class TestClass < described_class
-              initialize_fake_picture_methods(:test, :test_2)
+              initialize_methods(:test, :test_2)
             end
 
             expect(TestClass).to respond_to(:test)

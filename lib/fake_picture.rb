@@ -15,7 +15,7 @@ module FakePicture
       #TODO: make downloading pictures to gem by a service: https://source.unsplash.com/random/<width>x<height>
     # end
 
-    def self.initialize_fake_picture_methods(*method_names, new_random_method_name: nil) # from line 17 to 24 make code better
+    def self.initialize_methods(*method_names, new_random_method_name: nil) # from line 17 to 24 make code better
       path_to_pack = "#{__dir__}/fake_picture/#{self.name.split('::').last.downcase}/pack"
 
       self.superclass.check_pack_directory_readiness(path_to_pack)
