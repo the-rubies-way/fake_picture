@@ -25,7 +25,7 @@ module FakePicture
         name = new_random_method_name if name == :random && !new_random_method_name.nil?
 
         define_singleton_method :"#{name}" do
-          self.superclass.random_file("#{path_to_pack +  selector}")
+          self.superclass.random_file((path_to_pack +  selector).to_s)
         end
       end
 
