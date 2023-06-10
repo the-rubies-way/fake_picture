@@ -111,6 +111,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/loqimean/fake_picture.
 
+### To-Do
+- [ ] add comerce pictures, like "products", and certain product types, e.g. "car", "phone" and like this, might be "cakes" 🙂
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
