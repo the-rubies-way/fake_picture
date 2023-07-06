@@ -1,4 +1,5 @@
 [![Actions Status](https://github.com/loqimean/fake_picture/actions/workflows/CI.yml/badge.svg)](https://github.com/loqimean/fake_picture/actions)
+[![Listed on OpenSource-Heroes.com](https://opensource-heroes.com/badge-v1.svg)](https://opensource-heroes.com/r/loqimean/fake_picture)
 
 # FakePicture
 
