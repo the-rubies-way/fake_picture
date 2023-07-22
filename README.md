@@ -34,7 +34,7 @@ FakePicture::Avatar.woman   #=>  /Users/username/workdirectory/fake_picture/lib/
 You can also call method `person` if you want to get random `avatar`:
 
 ```ruby
-FakePicture::Avatar.person     #=> "/Users/xi-master/Workplace/fake_picture/lib/fake_picture/avatar/pack/woman-5.svg"
+FakePicture::Avatar.person     #=> "/Users/username/Workplace/fake_picture/lib/fake_picture/avatar/pack/woman-5.svg"
 ```
 
 ###### FakePicture::Blog:
@@ -62,7 +62,7 @@ FakePicture::Company.logo    #=>  /Users/username/workdirectory/fake_picture/lib
 You can also call a method `file` with method name of this class if you wanna get picture as file for some actions, like this:
 
 ```ruby
-FakePicture::People.file(:man)   #=> #<File:/Users/xi-master/Workplace/fake_picture/lib/fake_picture/avatar/pack/man-6.svg>
+FakePicture::People.file(:man)   #=> #<File:/Users/username/Workplace/fake_picture/lib/fake_picture/avatar/pack/man-6.svg>
 ```
 
 #### As Base64:
