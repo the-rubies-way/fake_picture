@@ -118,3 +118,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/loqime
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Thanks for your support!
+[<img width="100" alt="RailsJazz" src="https://avatars.githubusercontent.com/u/104008706?s=200">](https://github.com/railsjazz)
