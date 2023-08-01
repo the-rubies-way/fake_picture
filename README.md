@@ -3,7 +3,7 @@
 
 # FakePicture
 
-Welcome to my new gem! This is a gem for simple seeding, testing and etc by uploading fake pictures. Now you don't need create too many flders with pictures, because you can use this gem which can give you path to random picture of selectedd category or file, if you need it.
+Welcome to my new gem! This is a gem for simple seeding, testing and etc by uploading fake pictures. Now you don't need to create too many folders with pictures, because you can use this gem which can give you the path to a random picture of a selected category or file if you need it.
 
 ## Installation
 
@@ -31,7 +31,7 @@ FakePicture::Avatar.man     #=>  /Users/username/workdirectory/fake_picture/lib/
 FakePicture::Avatar.woman   #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/avatar/pack/woman-4.jpg
 ```
 
-You can also call method `person` if you want to get random `avatar`:
+You can also call the method `person` if you want to get a random `avatar`:
 
 ```ruby
 FakePicture::Avatar.person     #=> "/Users/username/Workplace/fake_picture/lib/fake_picture/avatar/pack/woman-5.svg"
@@ -59,7 +59,7 @@ FakePicture::Company.logo    #=>  /Users/username/workdirectory/fake_picture/lib
 
 #### As file:
 
-You can also call a method `file` with method name of this class if you wanna get picture as file for some actions, like this:
+You can also call a method `file` with the method name of this class if you wanna get a picture as a file for some actions, like this:
 
 ```ruby
 FakePicture::People.file(:man)   #=> #<File:/Users/username/Workplace/fake_picture/lib/fake_picture/avatar/pack/man-6.svg>
@@ -113,7 +113,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Bug reports and pull requests are welcome on GitHub at https://github.com/loqimean/fake_picture.
 
 ### To-Do
-- [ ] add comerce pictures, like "products", and certain product types, e.g. "car", "phone" and like this, might be "cakes" 🙂
+- [ ] add commerce pictures, like "products", and certain product types, e.g. "car", "phone" and like this, might be "cakes" 🙂
 
 ## License
 
