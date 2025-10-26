@@ -16,10 +16,8 @@ module FakePicture
 
     def self.download(width, height, service: :picsum, query: nil, grayscale: false, output_path: nil)
       url = build_url(width, height, service, query, grayscale)
-      
       uri = URI.parse(url)
       response = fetch_image(uri)
-      
       return false unless response.is_a?(Net::HTTPSuccess)
       
       if output_path
@@ -55,7 +53,6 @@ module FakePicture
       http.use_ssl = (uri.scheme == 'https')
       http.open_timeout = 10
       http.read_timeout = 10
-      
       request = Net::HTTP::Get.new(uri.request_uri)
       response = http.request(request)
 
