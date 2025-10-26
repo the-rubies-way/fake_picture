@@ -57,6 +57,32 @@ FakePicture::People.woman   #=>  /Users/username/workdirectory/fake_picture/lib/
 FakePicture::Company.logo    #=>  /Users/username/workdirectory/fake_picture/lib/fake_picture/company/pack/logo-11.svg
 ```
 
+#### Download images from online services:
+
+You can download random images from online services like picsum.photos or loremflickr.com:
+
+```ruby
+# Download from picsum.photos (default)
+image_data = FakePicture::Base.download(200, 300)
+
+# Download from loremflickr.com with a specific query
+image_data = FakePicture::Base.download(200, 300, service: :loremflickr, query: 'nature')
+
+# Download grayscale image
+image_data = FakePicture::Base.download(200, 300, grayscale: true)
+
+# Download and save to a file
+FakePicture::Base.download(200, 300, service: :picsum, output_path: '/path/to/image.jpg')
+#=> "/path/to/image.jpg"
+
+# Download from loremflickr with grayscale
+image_data = FakePicture::Base.download(300, 300, service: :loremflickr, query: 'cats', grayscale: true)
+```
+
+Supported services:
+- `:picsum` - picsum.photos (default)
+- `:loremflickr` - loremflickr.com
+
 #### As file:
 
 You can also call a method `file` with the method name of this class if you wanna get a picture as a file for some actions, like this:
